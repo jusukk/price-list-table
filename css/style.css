@@ -1,0 +1,133 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+.wrap {
+    max-width: 1600px;
+    margin: 0 auto
+}
+
+body {
+    font-family: 'LocatorWebRegular',sans-serif;
+}
+
+header {
+    background: #de0134;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+           
+}
+
+.filter-box {
+    background: #2A2A2A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1Rem;
+   
+}
+
+.filter-box div {
+    display: inline-block;
+    margin: 5px 25px;
+    
+}
+
+.filter-box ul  {
+    display: inline;
+    list-style-type: none;
+    overflow: hidden;
+    color: #fff;
+    margin: 0 25px;
+    
+}
+
+.filter-box li {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 150px;
+    height: 30px;
+    font-size: 1Rem;
+    
+}
+
+select{
+    width:150px;
+    float: right;
+    margin-left: 15px;
+}
+select option{
+    width:120px;
+    overflow:hidden;
+    font-size: 1Rem;
+}
+
+table {
+    color: black;
+    text-align: left;
+    border-collapse: collapse;
+    margin: 0px 0 50px 0;
+}
+
+th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 0 0.5Rem;
+    width: 300px;
+    height: 30px;
+
+}
+
+td {
+    border: 1px solid black;
+    text-align: left;
+    padding: 0.1Rem 0.5Rem;
+    height: 60px;
+}
+
+tr:nth-child(even) {
+    background-color: gainsboro;
+}
+
+.pagination {
+    list-style-type: none;
+    overflow: hidden;
+    text-align: center;
+    margin: 20px 0 50px 0;
+    
+}
+
+.pagination li {
+    display:inline;
+}
+
+.pagination a {
+    color: black;
+    padding: 1.5Rem;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    color: #de0134;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+
+}
+
+h2 {
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+    padding: 1rem 0;
+}
