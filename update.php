@@ -1,6 +1,6 @@
 <?php
 // Get an xlsx-file from their website and convert it to the CVS-file using the PhpSpreadsheet library. 
-// If successful, upload into the database
+// If successful, upload it into the database.
 
 require "getData.php";
 
@@ -11,9 +11,7 @@ require_once("vendor/autoload.php");
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-// If update button
 if (isset($_POST["updatebtn"])) {
-    
     $url = "https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx";
     $file_name = basename($url);
     
@@ -25,8 +23,8 @@ if (isset($_POST["updatebtn"])) {
 
         // Export to CSV file
         $writer = IOFactory::createWriter($spreadsheet, "Csv");
-        $writer->setSheetIndex(0);   // Select which sheet to export.
-        $writer->setDelimiter(';');  // Set delimiter.
+        $writer->setSheetIndex(0);   // Select which sheet to export
+        $writer->setDelimiter(';');  // Set delimiter
 
         $writer->save("alkon-hinnasto.csv");
 

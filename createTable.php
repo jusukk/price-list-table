@@ -1,7 +1,6 @@
 <?php
-
+// Create table, if data is found
 function createTable($array) {
-    // If data found
     if (!empty($array)) {
         $html = '<table>';
         // Header row

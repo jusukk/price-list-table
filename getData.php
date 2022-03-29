@@ -1,4 +1,5 @@
 <?php
+// Get data from the database
 require_once "filters.php";
 
 $talbeDataArray = [];
