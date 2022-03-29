@@ -1,6 +1,5 @@
 <?php
-// Filter buttons
-//----------------------------------------------------------------------------------------------------
+// Create Filter buttons
 function createTyyppiOption($array) {
     global $varTyyppi;
 
@@ -20,7 +19,6 @@ function createTyyppiOption($array) {
     echo "</select>";
 }
 
-//----------------------------------------------------------------------------------------------------
 function createValmistusmaaOption($array) {
     global $varValmistusmaa;
 
@@ -40,7 +38,6 @@ function createValmistusmaaOption($array) {
     echo "</select>";
 }
 
-//----------------------------------------------------------------------------------------------------
 function createPullokokoOption($array) {
     global $varPullokoko;
 
@@ -60,7 +57,6 @@ function createPullokokoOption($array) {
     echo "</select>";
 }
 
-//----------------------------------------------------------------------------------------------------
 function createHintaMINOption($array) {
     global $varHintaMIN;
 
@@ -80,7 +76,6 @@ function createHintaMINOption($array) {
     echo "</select>";
 }
 
-//----------------------------------------------------------------------------------------------------
 function createHintaMAXOption($array) {
     global $varHintaMAX;
 
@@ -100,7 +95,6 @@ function createHintaMAXOption($array) {
     echo "</select>";
 }
 
-//----------------------------------------------------------------------------------------------------
 function createPagesOption($pageCount) { 
     global $page;
     echo "Sivu: <select name='formPage' id='page' onchange='submit() '>";    

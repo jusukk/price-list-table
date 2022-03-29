@@ -7,7 +7,6 @@
         <title>Alkon hinnasto</title>
     </head>
     <body>
-        
         <?php
             require_once "getData.php";
             require_once "createTable.php";
@@ -16,6 +15,7 @@
             require_once "createBtn.php";
  
         ?> 
+
         <header>
             <div class="wrap">
                 <h1>Alkon hinnasto <?php echo getFileDate(); ?></h1>
@@ -61,22 +61,15 @@
         </div>
         
         <div class="wrap">
-           
-                <?php
-                    createTable($talbeDataArray);
-                ?>
-    
-            
-            <div>
-                
-            </div>
+            <?php
+                createTable($talbeDataArray);
+            ?>
+            <div></div>
         </div>
        
-
     </body>
 
     <script>
-        // Palauttaa filterit
         function resetFilters() {
             document.getElementById("tyyppi").selectedIndex=0;
             document.getElementById("valmistusmaa").selectedIndex=0;
@@ -88,6 +81,5 @@
             document.getElementById("limit").selectedIndex=0;
         }
     </script>
-
 
 </html>

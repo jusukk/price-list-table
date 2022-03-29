@@ -1,7 +1,7 @@
 <?php
 
 function createTable($array) {
-    // Jos on dataa
+    // If data found
     if (!empty($array)) {
         $html = '<table>';
         // Header row

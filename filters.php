@@ -35,23 +35,22 @@ $includeColums = [
 $sql_includeColums = implode(", ", $includeColums);
 
 // Create filter sql
-//----------------------------------------------------------------------------------------------------
 $filterArray = array();
-// Tyyppi ----------------------------------------------------
+// Tyyppi
 if (isset($_POST["formTyyppi"])) {
     $varTyyppi = $_POST['formTyyppi'];
     if (!empty($varTyyppi)) {
         $filterArray[0] = "Tyyppi = '$varTyyppi'";  
     }
 }
-// Valmistusmaa ----------------------------------------------------
+// Valmistusmaa
 if (isset($_POST["formValmistusmaa"])) {
     $varValmistusmaa = $_POST['formValmistusmaa'];
     if (!empty($varValmistusmaa)) {
         $filterArray[1] = "Valmistusmaa = '$varValmistusmaa'";  
     }
 }
-// Pullokoko ----------------------------------------------------
+// Pullokoko
 if (isset($_POST["formPullokoko"])) {
     $varPullokoko = $_POST['formPullokoko'];
     if (!empty($varPullokoko)) {
@@ -59,7 +58,7 @@ if (isset($_POST["formPullokoko"])) {
     }
 }
 
-// Hinta ----------------------------------------------------
+// Hinta
 if (isset($_POST["formHintaMIN"])) {
     $varHintaMIN = $_POST['formHintaMIN'];
 }
@@ -74,7 +73,7 @@ else {
 }
 $filterArray[3] = "Hinta BETWEEN $varHintaMIN AND $varHintaMAX";
 
-// Järjestä ----------------------------------------------------
+// Sort
 if (isset($_POST["formSort"])) {
     $varSort = $_POST['formSort'];
 }
@@ -82,7 +81,7 @@ else {
     $varSort = '';
 }
 
-// Sivut ----------------------------------------------------
+// Pages
 if (isset($_POST["formPage"])) {
     $page = $_POST['formPage'];
 }
@@ -97,17 +96,15 @@ else {
     $limit = 25;
 }
 
-
-// Assemble sql ----------------------------------------------------
+// Assemble SQL
 if ($filterArray) {
     $sql_filters = ' WHERE ' . implode(' AND ', $filterArray);
 }
 else {
     $sql_filters = '';
 }
-//print_r($sql_filters);
 
-// luo järjestys sql ----------------------------------------------------
+// Create sorting SQL
 $order_sql = "";
 if (isset($_POST["formSort"])) {
     if (!empty($_POST['formSort'])) {

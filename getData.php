@@ -17,7 +17,7 @@ if (!$db){
     echo "Connection failed:" . mysqli_connect_error();
 }
 
-// Jos taulukko on tyjhä, käytetään backup ----------------------------------------------------
+// If table is empty, use back up table
 $sql_allData = "SELECT * FROM $table";
 $result = $db->query($sql_allData);
 $result = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -30,28 +30,25 @@ else {
 	$table = "alko";
 }
 
-
-// Counting total rows ----------------------------------------------------
+// Counting total rows
 $sql_allData = "SELECT * FROM $table";
 $rowCountData = $db->query($sql_allData);
 $rowCount = mysqli_num_rows($rowCountData); 
 
-
-// Get filterBtn data, no limit  ----------------------------------------------------
+// Get filterBtn data, no limit
 $sql_filterData = "SELECT $sql_includeColums FROM $table $sql_filters $order_sql";
 $filterData = $db->query($sql_filterData);
 $filteredRowCount = mysqli_num_rows($filterData);
 $filterDataArray = $filterData -> fetch_all(MYSQLI_ASSOC);
 
-
-//Sivumäärä
+// Page numbers
 $pageCount = ceil($filteredRowCount/$limit);
 // Reset page
 if ($pageCount < $page) {
     $page = 1;
 }
 
-//first item to display on this page
+// First item to display on this page
 if($page) {
     $start = ($page - 1) * $limit;
 }               
@@ -60,7 +57,7 @@ else {
 }
         
 
-// Get tablet data ----------------------------------------------------
+// Get table data
 $sql_tabletData = "$sql_filterData LIMIT $start, $limit";
 $talbeData = $db->query($sql_tabletData);
 $talbeDataArray = $talbeData -> fetch_all(MYSQLI_ASSOC);
@@ -69,8 +66,7 @@ $talbeDataArray = $talbeData -> fetch_all(MYSQLI_ASSOC);
 //echo "<br>AllRows: $rowCount, FilterRows: $filteredRowCount, PageCount: $pageCount, Limit: $limit, CurrentPage: $page";
 
 
-// Hakee unique arvot ja poistaa tyhjät 
-//----------------------------------------------------------------------------------------------
+// Seek unique values and remove empty ones
 $tyyppiDataArray = array_unique(array_filter(array_column($filterDataArray, 'Tyyppi')));
 sort($tyyppiDataArray);
 //print_r($tyyppiDataArray);
